@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Cantor Disaster App</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./main.css">
+  <script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h2>CANTOR Disaster Management App</h2>
+    <span>
+      <a href="./sos.html">About</a>
+      <a href="./sos.html">Profile</a>
+      <a href="./userchoice.html">Change view</a>
+    </span>   
+  </header>
+  
+  <div class="mainPage">
+      <div>
+        <a href="./sos.html"><button class="sos">SOS</button></a>
+      </div>
+      <div>
+        <a href="./nearloc.html"><button id="nloc">Get nearby location</button></a>
+      </div>
+      <div>
+        <button id="faq">Dashboard</button>
+    </div>
+  </div>
+  <div class="chatbot" style="font-style: italic;">
+    <div id="bot">
+      <h2>CHATBOT</h2>
+      <div id="chat">
+        <p>How I Can Help you?</p>
+      </div>
+      <div id="resp"> 
+        <input type="text" id="message" /><button class="ask">send</button>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</body>
+
+<script>
+  function message() {
+    var aks = $('#message').val();
+    aks = "✔  " + aks;
+    $('#message').val("");
+    var ele = $("<p></p>").text(aks);
+    $('#chat').append(ele)
+  }
+
+  $(".ask").click(message);
+</script>
+
+</html>

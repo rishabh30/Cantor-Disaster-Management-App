@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Cantor Disaster App</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+    .map {
+        text-align: center;
+        padding: 30px;
+    }
+    p {
+      font-size: 25px;
+      line-height: 30px;
+    }
+</style>
+
+<body>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1X_6QkCdDBq6jg77bwlYGDwgIeZ2_XfWL" width="1000" height="680"></iframe>
+        <div>
+          <button onclick="getLocation()">Get Location</button>
+            <p id="demo"></p>
+        </div>
+        
+    </div>
+    
+</body>
+
+<script>
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+      
+  function showPosition(position) {
+      x.innerHTML="Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude;
+  }
+</script>
+
+</html>

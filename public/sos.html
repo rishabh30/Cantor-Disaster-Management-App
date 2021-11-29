@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title>Cantor Disaster App</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./sos.css">
+
+  <script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+  <header>
+    <h2>CANTOR Disaster Management App</h2>
+    <span>
+      <a href="./sos.html">About</a>
+      <a href="./sos.html">Profile</a>
+      <a href="./userchoice.html">Change View</a>
+    </span>   
+  </header>
+
+  <div class="sos">
+    <h1>
+        Select information to send
+    </h1>
+    <!-- <div>
+      <input type="checkbox" name="location" value="Bike">
+      <label for="location"> Geolocation</label><br>
+      <div>
+          <p>Latitute and longitute are</p>
+          <p>120384, 274784</p>
+      </div>
+      
+      <input type="checkbox" name="personal" value="Car">
+      <label for="personal"> Personal Info</label><br>
+      <div>
+          <p>Name: AAKsh </p>
+          <p>Address: ldjfdj</p>
+          <p>Phone no: ldjfdj</p>
+          <p>Blood Type: B+</p>
+      </div>
+    </div> -->
+    <div class="container">
+      <div>
+        <div>
+          <label for="name">Your Name:</label>
+          <input type="text" placeholder="Akash Meshram" name="Name" id="name">
+          <label for="Phone">Your Phone Number:</label>
+          <input type="text" placeholder="9XXXXXXXXXX" name="Phone" id="phone">
+        </div>        
+        
+        <label>
+          <input type="checkbox" name="subscribe" id="geoloc"> Geolocation        
+        </label>
+      </div>
+      <div>
+        <textarea name="message" rows="10" cols="30" placeholder="Any message to send" id="message"></textarea>
+      </div>
+      
+    </div>
+
+    <div>      
+        <button class="send">Send</button>
+    </div>
+  </div>
+  
+</body>
+
+<script type="text/javascript">
+	function tdo() {
+    var location = "Location not available"
+    var name = $('#name').val();
+    var phone = $('#phone').val();
+    var message = $('#message').val();
+    if($('#geoloc').is(':checked')) {
+      location = "Latitude: 22.318761, Longitude: 87.2980118";
+    }  
+    
+    var data = name + " " + phone + "\n" + location + "\n" + message;
+
+		$.ajax({
+		type: "POST",
+		url: "/users",
+		data: {"dataA" : data},
+		dataType : "json",
+		cache: false,
+			success: function(data){
+				console.log("Tweeted");
+			}
+		});
+	}
+
+  $(".send").click(tdo);
+
+</script>
+
+</html>

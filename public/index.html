@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Cantor Disaster App</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+  
+  .title {
+    font-size: 48px;
+    font-weight: bolder;
+  }
+
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
+
+  .loginPage div {
+    margin: 20px;
+  }
+
+  .language select {
+    padding: 5px 10px;
+      margin: 15px;
+  }
+
+  .tohomepage {
+    color: black;
+    border-color: #B92153;
+    /* background-color: white; */
+  }
+
+</style>
+
+<body>
+  <div class="loginPage">
+    <div>
+      <h1 class="title">
+        Welcome to CANTOR Disaster Management App
+      </h1>
+    </div>
+    
+    <div class="language">
+      <label for="language">Choose a language:</label>
+      <select id="language">
+        <option value="english">English</option>
+        <option value="hindi">Hindi</option>        
+        <option value="bengali">Bengali</option>
+        <option value="marathi">Marathi</option>
+      </select>
+    </div>      
+    <div>
+      <a href="./userchoice.html"><button class="tohomepage">Continue</button></a>
+    </div>
+    
+  </div>  
+</body>
+
+</html>
